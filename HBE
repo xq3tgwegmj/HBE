@@ -10,7 +10,7 @@ local section1 = createSection(page1, "HBE")
 local slider1 = createSlider(section1, "Size", "Size of HBE", 0, 20, function(value)
     getgenv().size = Vector3.new(value,value,value)
     getgenv().currentSize = value
-    updateHeading(page1.Heading,"<b>HBE :"..getgenv().currentSize = 6.."</b>")
+    updateHeading(page1.Heading,"<b>HBE :"..getgenv().currentSize.."</b>")
     if getgenv().toggle then
         giveHBE()
     end
@@ -21,7 +21,7 @@ local textbox1 = createTextbox(section1, "Custom size", "Enter any HBE size", fu
 		if tonumber(number) then
 			getgenv().size = Vector3.new(number,number,number)
 			getgenv().currentSize = number
-			updateHeading(page1.Heading,"<b>HBE :"..getgenv().currentSize = 6.."</b>")
+			updateHeading(page1.Heading,"<b>HBE :"..getgenv().currentSize.."</b>")
 			if getgenv().toggle then
 				giveHBE()
 			end
@@ -67,14 +67,14 @@ end)
 local keybind5 = createKeybind(section2, "Increase size", "+1 stud", Enum.KeyCode.K, function()
     getgenv().size = getgenv().size + Vector3.new(1,1,1)
     getgenv().currentSize = getgenv().currentSize+1
-    updateHeading(page1.Heading,"<b>HBE :"..getgenv().currentSize = 6.."</b>")
+    updateHeading(page1.Heading,"<b>HBE :"..getgenv().currentSize.."</b>")
     giveHBE()
     sendNoti("Increased HBE size: "..tostring(getgenv().currentSize))
 end)
 local keybind6 = createKeybind(section2, "Decrease size", "-1 stud", Enum.KeyCode.L, function()
     getgenv().size = getgenv().size - Vector3.new(1,1,1)
     getgenv().currentSize = getgenv().currentSize - 1
-    updateHeading(page1.Heading,"<b>HBE :"..getgenv().currentSize = 6.."</b>")
+    updateHeading(page1.Heading,"<b>HBE :"..getgenv().currentSize.."</b>")
     giveHBE()
     sendNoti("Decreased HBE size: "..tostring(getgenv().currentSize))
 end)
