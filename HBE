@@ -13,6 +13,17 @@ local slider1 = createSlider(section1, "Size", "Size of HBE", 0, 20, function(va
     end
     --sendNoti("HBE size: "..tostring(value))
 end)
+local textbox1 = createTextbox(section1, "Custom size", "Enter any HBE size", function(number)
+	if number ~= "" then
+		if tonumber(number) then
+			getgenv().size = Vector3.new(number,number,number)
+			if getgenv().toggle then
+				giveHBE()
+			end
+			sendNoti("Custom HBE size: "..number)
+		end
+	end
+end)
 --[[
 local toggle1 = createToggle(section1, "Notis", "Toggle notifications", function(status)
     getgenv().notis = status
