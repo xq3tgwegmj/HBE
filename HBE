@@ -26,7 +26,7 @@ local textbox1 = createTextbox(section1, "Custom size", "Enter any HBE size", fu
 			if getgenv().toggle then
 				giveHBE()
 			end
-			sendNoti("Custom HBE size: "..number)
+			sendNoti("Custom HBE size: <b>"..number.."</b>")
 		end
 	end
 end)
@@ -36,7 +36,7 @@ local page2 = createPage("Keybinds")
 local section2 = createSection(page2, "Keybinds")
 local keybind1 = createKeybind(section2, "Toggle UI", "Toggle UI Visibility", Enum.KeyCode.B, function()
     local uiv = toggleUI()
-	sendNoti("Toggled UI: "..tostring(uiv))
+	sendNoti("Toggled UI: <b>"..tostring(uiv).."</b>")
 end)
 local keybind2 = createKeybind(section2, "Toggle HBE", "Toggle HBE", Enum.KeyCode.M, function()
     getgenv().toggle = not getgenv().toggle
@@ -45,7 +45,7 @@ local keybind2 = createKeybind(section2, "Toggle HBE", "Toggle HBE", Enum.KeyCod
     else
         takeHBE()
     end
-	sendNoti("Toggled HBE: "..tostring(getgenv().toggle))
+	sendNoti("Toggled HBE: <b>"..tostring(getgenv().toggle).."</b>")
 end)
 local keybind3 = createKeybind(section2, "Toggle team check", "Toggle HBE for teammates", Enum.KeyCode.T, function()
 	getgenv().teamCheck = not getgenv().teamCheck
@@ -54,7 +54,7 @@ local keybind3 = createKeybind(section2, "Toggle team check", "Toggle HBE for te
     else
         giveHBE()
     end
-	sendNoti("Toggled team check: "..tostring(getgenv().teamCheck))
+	sendNoti("Toggled team check: <b>"..tostring(getgenv().teamCheck).."</b>")
 end)
 local keybind4 = createKeybind(section2, "Toggle HBE Visibility", "Toggle Invisible HBE", Enum.KeyCode.V, function()
 	getgenv().visible = not getgenv().visible
@@ -63,19 +63,19 @@ local keybind4 = createKeybind(section2, "Toggle HBE Visibility", "Toggle Invisi
     else
         visibleOff()
     end
-	sendNoti("Toggled HBE visibility: "..tostring(getgenv().visible))
+	sendNoti("Toggled HBE visibility: <b>"..tostring(getgenv().visible).."</b>")
 end)
 local keybind5 = createKeybind(section2, "Increase size", "+1 stud", Enum.KeyCode.K, function()
     getgenv().size = getgenv().size + Vector3.new(1,1,1)
     getgenv().currentSize = getgenv().currentSize+1
     page1:WaitForChild("Heading").Text = "<b>HBE : "..getgenv().currentSize.."</b>"
     giveHBE()
-    sendNoti("Increased HBE size: "..tostring(getgenv().currentSize))
+    sendNoti("Increased HBE size: <b>"..tostring(getgenv().currentSize).."</b>")
 end)
 local keybind6 = createKeybind(section2, "Decrease size", "-1 stud", Enum.KeyCode.L, function()
     getgenv().size = getgenv().size - Vector3.new(1,1,1)
     getgenv().currentSize = getgenv().currentSize - 1
     page1:WaitForChild("Heading").Text = "<b>HBE : "..getgenv().currentSize.."</b>"
     giveHBE()
-    sendNoti("Decreased HBE size: "..tostring(getgenv().currentSize))
+    sendNoti("Decreased HBE size: <b>"..tostring(getgenv().currentSize).."</b>")
 end)
