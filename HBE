@@ -8,8 +8,11 @@ createWindow("BottleUILib","version_alpha_1")
 local page1 = createPage("HBE")
 page1:WaitForChild("Heading").Text = "<b>HBE : "..getgenv().currentSize.."</b>"
 local section1 = createSection(page1, "HBE")
-local slider1 = createSlider(section1, "Size", "Size of HBE", 0, 20, function(value)
+local slider1 = createSlider(section1, "Size", "Size of HBE", 1, 20, function(value)
     getgenv().size = Vector3.new(value,value,value)
+    if value == 1 then
+        getgenv().size = Vector3.new(2,2,1)
+    end
     getgenv().currentSize = value
     page1:WaitForChild("Heading").Text = "<b>HBE : "..getgenv().currentSize.."</b>"
     if getgenv().toggle then
