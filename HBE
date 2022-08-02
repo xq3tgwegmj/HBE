@@ -1,4 +1,4 @@
-local lib = loadstring(game:HttpGet("https://raw.githubusercontent.com/xq3tgwegmj/uilib/main/lib", true))()
+local lib = loadstring(game:HttpGet("https://raw.githubusercontent.com/xq3tgwegmj/uilib/main/uilib", true))()
 
 local hbe = loadstring(game:HttpGet("https://raw.githubusercontent.com/xq3tgwegmj/h-/main/h", true))()
 
